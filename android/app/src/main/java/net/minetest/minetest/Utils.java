@@ -22,7 +22,7 @@ public class Utils {
 	@NonNull
 	public static File getUserDataDirectory(@NonNull Context context) {
 		File extDir = Objects.requireNonNull(
-			new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_MEDIA), "net.minetest.minetest"),
+			new File(context.getExternalMediaDirs()[0], "net.minetest.minetest"),
 			"Cannot get external file directory"
 		);
 		return createDirs(extDir, "Minetest");
